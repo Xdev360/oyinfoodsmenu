@@ -247,7 +247,6 @@ function renderMenu(gridEl, key){
     tag.textContent = (menuData[item.category] && menuData[item.category].title) ? menuData[item.category].title : '';
     card.appendChild(tag);
 
-    card.appendChild(media);
     card.appendChild(body);
 
     // Click to open modal with details
