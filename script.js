@@ -213,12 +213,10 @@ function renderMenu(gridEl, key){
     card.setAttribute('data-name', item.name);
     card.setAttribute('aria-label', `${item.name}, ${item.price}`);
 
-    const media = document.createElement('div');
-    media.className = 'media';
-    const img = document.createElement('img');
-    img.src = getImageUrl(item);
-    img.alt = item.name;
-    media.appendChild(img);
+    // decorative accent (image-free design)
+    const accentBar = document.createElement('div');
+    accentBar.className = 'accent-bar';
+    card.appendChild(accentBar);
 
     const body = document.createElement('div');
     body.className = 'body';
@@ -280,8 +278,7 @@ function openItemModal(item){
   modalTitle.textContent = item.name;
   modalBody.innerHTML = `
     <div style="display:flex;flex-direction:column;gap:12px">
-      <img src="${getImageUrl(item)}" alt="${item.name}" style="width:100%;height:200px;object-fit:cover;border-radius:12px" />
-      <div style="display:flex;justify-content:space-between;align-items:center"><strong>${item.price}</strong></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0"><strong style="font-size:16px">${item.name}</strong><strong style="color:var(--gold);font-size:16px">${item.price}</strong></div>
       ${item.desc ? `<div style="color:rgba(43,22,7,0.7);font-size:14px">${item.desc}</div>` : ''}
     </div>
   `;

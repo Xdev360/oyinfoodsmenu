@@ -9,9 +9,9 @@ Menu items
 - Each item: `{ name: 'Jollof Rice', price: '₦1,500', desc: 'Optional description' }`.
 
 Images
-- By default the demo now uses **real food images** fetched from Unsplash (via search queries) using `getImageUrl(item)`; this provides realistic photos for each item.
-- If you prefer local assets or specific photos, set `item.image` to a local path (e.g., `assets/jollof.jpg`) and the code will use that image instead.
-- The project still contains lightweight SVG placeholders (`assets/food-*.svg`) used as fallbacks when an image isn't available or network access is restricted.
+- The demo currently uses **image-free** menu cards by default (minimal, text-focused cards with a decorative accent bar).
+- To re-enable images for cards, set `item.image` to a URL or local path in `menuData` (e.g., `item.image = 'assets/jollof.jpg'`) and the `getImageUrl(item)` function will be used by the modal and card rendering.
+- The project still contains lightweight SVG placeholders (`assets/food-*.svg`) if you choose to use local images.
 
 Serving locally
 - Open `index.html` directly in browser, or run a static server:
