@@ -63,3 +63,16 @@ If you want, I can:
 1. Convert `server.js` into serverless `/api` functions and wire image uploads to a cloud storage provider (Cloudinary or S3).
 2. Keep a minimal cloud-agnostic adapter that stores images in S3 and writes metadata to a managed DB.
 
+What I changed for serverless:
+
+- Added `/api/*` serverless handlers that mirror the previous Express API. They read/write `db.json` locally for testing but for production you should use a managed database.
+- Added `/api/upload` which uploads images to Cloudinary. Set the `CLOUDINARY_URL` environment variable in Vercel (or local env) to enable uploads.
+- Add `JWT_SECRET` env var for auth token signing in production.
+
+Environment variables to set on Vercel:
+
+- `CLOUDINARY_URL` — Cloudinary connection URL (or set `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`, `CLOUDINARY_CLOUD_NAME`).
+- `JWT_SECRET` — secret string for signing admin tokens.
+
+Local testing: the serverless endpoints are file-backed and will work locally (they read/write `db.json`). When deploying to Vercel, configure a real DB and cloud storage.
+
