@@ -218,6 +218,14 @@ function renderMenu(gridEl, key){
     accentBar.className = 'accent-bar';
     card.appendChild(accentBar);
 
+    // media / image area — uses getImageUrl(item)
+    const media = document.createElement('div');
+    media.className = 'media';
+    media.setAttribute('aria-hidden', 'true');
+    // use inline style to set background image (fall back handled by getImageUrl)
+    media.style.backgroundImage = `url('${getImageUrl(item)}')`;
+    card.appendChild(media);
+
     const body = document.createElement('div');
     body.className = 'body';
 
