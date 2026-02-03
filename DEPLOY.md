@@ -45,8 +45,36 @@ netlify deploy --prod --dir=.
 ```
 
 ## Vercel
+## Vercel
 
-- Install `vercel` CLI: `npm i -g vercel`, then run `vercel` in the project root and follow prompts.
+- Repository: https://github.com/Xdev360/oyinfoodsmenu.git
+
+- Quick CLI deploy (recommended):
+
+```bash
+# install the Vercel CLI if you don't have it
+npm i -g vercel
+
+# login to your Vercel account
+vercel login
+
+# (optional) link this local folder to an existing Vercel project or create one
+vercel link
+
+# deploy a preview (interactive)
+vercel
+
+# deploy directly to production
+vercel --prod
+```
+
+- Dashboard / Git integration: For continuous deployment, connect the repository above in the Vercel dashboard (https://vercel.com → Projects → Import Project → Git Repository). Vercel will build and publish on each push; the deployment URL is shown in the dashboard and printed by the CLI after each deploy.
+
+- Notes: If you want me to add a `vercel.json` or specific build settings, tell me the framework/build command. For a simple static site the default settings are sufficient.
+
+- Production URL: https://oyinfoodsmenu.vercel.app/
+
+- Quick verification: after `vercel --prod` the CLI prints a live URL; you can also open the production URL in your browser or check the latest deployment in the Vercel dashboard.
 
 ## Notes / Tips
 

@@ -1,140 +1,27 @@
-const menuData = {
-  proteins: {
-    title: 'PROTEINS',
-    items: [
-      { name: 'Beef', price: '₦1,200' },
-      { name: 'Pomo', price: '₦1,000' },
-      { name: 'Shaki', price: '₦1,500' },
-      { name: 'Roundabout', price: '₦1,500' },
-      { name: 'Liver', price: '₦1,500' },
-      { name: 'Cow Head', price: '₦1,500' },
-      { name: 'Cow Leg', price: '₦2,000' },
-      { name: 'Chicken Wing', price: '₦1,000' },
-      { name: 'Chicken', price: '₦3,500' },
-      { name: 'Turkey', price: '₦6,000' },
-      { name: 'Titus Fish', price: '₦3,000' },
-      { name: 'Hake Fish', price: '₦3,000' },
-      { name: 'Crispy Chicken', price: '₦2,500' },
-      { name: 'Small Crispy Chicken', price: '₦1,800' },
-      { name: 'Goat Meat', price: '₦5,000' },
-      { name: 'Snail', price: '₦2,500' },
-      { name: 'Boiled Egg', price: '₦400' }
-    ]
-  },
-  rice: {
-    title: 'RICE & MAIN MEALS',
-    items: [
-      { name: 'Jollof Rice', price: '₦1,500' },
-      { name: 'Fried Rice', price: '₦1,500' },
-      { name: 'Asọ Rice', price: '₦2,800' },
-      { name: 'Village Rice', price: '₦2,800' },
-      { name: 'Special Rice', price: '₦2,800' },
-      { name: 'Stir Fry Spaghetti', price: '₦2,800' },
-      { name: 'Gizzard Rice', price: '₦2,800' },
-      { name: 'Veggie Fried Rice', price: '₦2,800' },
-      { name: 'Rice & Beans', price: '₦1,200' },
-      { name: 'Beans Stew', price: '₦1,000' },
-      { name: 'Ofada Rice', price: '₦1,000' },
-      { name: 'White Rice', price: '₦900' },
-      { name: 'Jollof Macaroni', price: '₦2,800' },
-      { name: 'Moi Moi', price: '₦1,000' },
-      { name: 'Amala', price: '₦300' },
-      { name: 'Assorted Meats', price: '₦300' }
-    ]
-  },
-  boiled: {
-    title: 'BOILED & SAUCES',
-    items: [
-      { name: 'Boiled Yam & Sauce', price: '₦3,500' },
-      { name: 'Boiled Plantain & Sauce', price: '₦3,500' },
-      { name: 'Egg Sauce', price: '₦1,000' },
-      { name: 'Fish Sauce', price: '₦1,000' },
-      { name: 'Ofada Sauce', price: '₦2,000' },
-      { name: 'Salad', price: '₦500' }
-    ]
-  },
-  soups: {
-    title: 'SOUPS',
-    items: [
-      { name: 'Egusi (Ugu or Bitterleaf)', price: '₦1,000' },
-      { name: 'Afang', price: '₦1,000' },
-      { name: 'Oha', price: '₦1,000' },
-      { name: 'Ogbono', price: '₦1,000' },
-      { name: 'Efo Riro', price: '₦1,000' },
-      { name: 'Edikai Kong', price: '₦1,000' }
-    ]
-  },
-  sides: {
-    title: 'SIDES & SWALLOWS',
-    items: [
-      { name: 'Fried Plantain', price: '₦500' },
-      { name: 'Yamarita', price: '₦1,500' },
-      { name: 'Yam Porridge', price: '₦900' },
-      { name: 'Semovita', price: '₦400' },
-      { name: 'Eba', price: '₦400' }
-    ]
-  },
-  pastries: {
-    title: 'PASTRIES & SNACKS',
-    items: [
-      { name: 'Egg Roll', price: '₦800' },
-      { name: 'Hotdog', price: '₦800' },
-      { name: 'Jam Doughnut', price: '₦800' },
-      { name: 'Special Doughnut', price: '₦1,000' },
-      { name: 'Meat Pie', price: '₦1,000' },
-      { name: 'Chicken Pie', price: '₦1,000' }
-    ]
-  },
-  fastfood: {
-    title: 'FAST FOOD',
-    items: [
-      { name: 'Sandwich', price: '₦1,500' },
-      { name: 'Pizza (Small)', price: '₦8,000' },
-      { name: 'Pizza (Medium)', price: '₦10,000' },
-      { name: 'Pizza (Large)', price: '₦12,000' },
-      { name: 'Shawarma (1 Sauce)', price: '₦3,000' },
-      { name: 'Shawarma (2 Sauces)', price: '₦4,000' },
-      { name: 'Bread', price: '₦1,400' },
-      { name: 'Chicken & Chips', price: '₦7,700' },
-      { name: 'Popcorn', price: '₦1,500' },
-      { name: 'Ice Cream (Small)', price: '₦800' },
-      { name: 'Ice Cream (Large)', price: '₦1,500' }
-    ]
-  },
-  drinks: {
-    title: 'DRINKS & BEVERAGES',
-    items: [
-      { name: 'Coca-Cola', price: '₦600' },
-      { name: 'Pepsi', price: '₦600' },
-      { name: 'Sprite', price: '₦600' },
-      { name: 'Fanta', price: '₦600' },
-      { name: 'Eva Water (Small)', price: '₦400' },
-      { name: 'Eva Water (Large)', price: '₦500' },
-      { name: 'Chivita', price: '₦2,000' },
-      { name: 'Chivita Exotic', price: '₦2,000' },
-      { name: 'Hollandia Yogurt', price: '₦2,000' },
-      { name: 'Ferrous', price: '₦850' },
-      { name: 'Mortar Guinness', price: '₦900' },
-      { name: 'Suzubu', price: '₦1,000' },
-      { name: 'Coffee', price: '₦700' }
-    ]
-  },
-  combos: {
-    title: 'COMBO MEALS',
-    items: [
-      { name: 'Naija Classic Combo', price: '₦2,800', desc: 'Jollof Rice, Fried Plantain, Beef, Bottle Water' },
-      { name: 'Village Vibes', price: '₦3,800', desc: 'Village Rice, Cow Leg, Moi Moi, Pepsi' },
-      { name: 'Corporate Lunch Box', price: '₦4,200', desc: 'Fried Rice, Chicken, Salad, Eva Water' },
-      { name: 'Sunday Special Pack', price: '₦6,000', desc: 'White Rice & Ofada Sauce, Fried Plantain, Turkey, Hollandia Yogurt' },
-      { name: 'Street Delight', price: '₦4,500', desc: 'Stir Fry Spaghetti, Crispy Chicken, Egg Roll, Sprite' },
-      { name: 'FitFam Feast', price: '₦4,000', desc: 'Veggie Fried Rice, Titus Fish, Salad, Water' },
-      { name: 'Pounded Power Pack', price: '₦2,500', desc: 'Amala or Eba, Egusi with Assorted Meat, Water' },
-      { name: 'Sweet Tooth Combo', price: '₦3,000', desc: 'Meat Pie, Jam Doughnut, Ice Cream, Fanta' },
-      { name: 'Swallow King Combo', price: '₦5,500', desc: 'Semovita, Edikai Kong, Goat Meat, Mortar Guinness' },
-      { name: 'Big Baller Special', price: '₦8,500', desc: 'Asọ Rice, Chicken & Chips, Snail, Chivita Exotic' }
-    ]
+const API = '/api';
+
+// Load data from API and render similarly to previous implementation.
+let menuData = {};
+let categories = [];
+let items = [];
+
+async function loadData(){
+  try{
+    const [catsRes, itemsRes] = await Promise.all([fetch(API+'/categories'), fetch(API+'/items')]);
+    categories = await catsRes.json();
+    items = await itemsRes.json();
+    // build menuData map keyed by category id or fallback to 'all'
+    menuData = {};
+    categories.forEach(c=>{ menuData[c.id] = { title: c.name, items: [] }; });
+    items.forEach(it=>{
+      const catKey = it.categoryId || 'uncategorized';
+      if(!menuData[catKey]) menuData[catKey] = { title: 'Uncategorized', items: [] };
+      menuData[catKey].items.push(Object.assign({}, it, { desc: it.description }));
+    });
+  }catch(e){
+    console.error('Failed to load menu data', e);
   }
-};
+}
 
 // Image sourcing — prefer explicit `item.image`, otherwise use Unsplash search per item name, with a local placeholder fallback
 const LOCAL_IMAGES = [
@@ -157,7 +44,7 @@ function getImageUrl(item){
   if(typeof item === 'string') item = { name: item };
 
   // 1) explicit image on item
-  if(item.image) return item.image;
+  if(item.image) return item.image.startsWith('/') ? item.image : ('/' + item.image);
 
   // 2) curated map
   if(IMAGE_MAP[item.name]) return IMAGE_MAP[item.name];
@@ -347,8 +234,19 @@ function setupModal(){
 }
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
-  renderCategories(document.getElementById('categories'));
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadData();
+  const container = document.getElementById('categories');
+  // render category buttons from `categories`
+  container.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.className = 'btn-cat active'; allBtn.setAttribute('data-category','all'); allBtn.setAttribute('aria-pressed','true'); allBtn.textContent = 'All';
+  container.appendChild(allBtn);
+  Object.keys(menuData).forEach(key => {
+    const btn = document.createElement('button'); btn.className='btn-cat'; btn.setAttribute('data-category', key); btn.setAttribute('aria-pressed','false'); btn.textContent = (menuData[key].title || 'Category'); container.appendChild(btn);
+  });
+
+  renderMenu(document.getElementById('menuGrid'), 'all');
   setupCategoryInteractions();
   setupModal();
 });

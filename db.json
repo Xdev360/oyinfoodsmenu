@@ -1,0 +1,31 @@
+{
+  "categories": [
+    {
+      "id": "c1",
+      "name": "Breakfast",
+      "description": "Start your day right",
+      "image": "assets/food-1.svg"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "name": "Akara Deluxe",
+      "description": "Crispy bean fritters with spicy sauce",
+      "price": 5.99,
+      "categoryId": "c1",
+      "image": "assets/food-2.svg",
+      "featured": false,
+      "popular": true,
+      "spicy": false,
+      "vegetarian": true
+    }
+  ],
+  "users": [
+    {
+      "id": "u1",
+      "email": "admin@example.com",
+      "passwordHash": "$2a$10$7G0/ej7y8d8m1QwqWlZ2XevuQ6w0K3gQ7b3xqW1n9q5YwV9f8Y5yK" 
+    }
+  ]
+}
